@@ -4,63 +4,33 @@ import java.util.*;
 public class Test {
 
     public static void main(String[] args) {
-        int i = 1, n = 5;
-        while(i <= n) {
-            System.out.println("Hello");
-            i++;
 
-            System.out.println(Integer.MIN_VALUE);
 
-            Set<List<Integer>> ls = new HashSet<>();
-
-            ArrayList<Integer> arr = new ArrayList<>();
-            arr.add(-1);
-            arr.add(0);
-            arr.add(1);
-            arr.add(2);
-            arr.add(-1);
-            arr.add(4);
-            threeSum(arr);
-
-            /*
-            1 -1 0
-            0 -1 1
-             */
-        }
+        reverse(322122547);
     }
+//    Integer x = Integer.valueOf(str);
+//    // or
+//    int y = Integer.parseInt(str);
+    public static long reverse(long a) {
+        // Autoboxing
+        int aa =20;
+        Integer i= aa;//converting int into Integer explicitly
+        Integer j=aa;//autoboxing, now compiler will write Integer.valueOf(a) internally
 
-    public static ArrayList<ArrayList<Integer>> threeSum(ArrayList<Integer> A) {
+        // Unboxing
+        Integer aaa = (Integer) 3;
+        int ii = aaa;//converting Integer to int explicitly
+        int jj = aaa;//unboxing, now compiler will write a.intValue() internally
 
-        ArrayList<ArrayList<Integer>> arr = new ArrayList<>();
-        Set<ArrayList<Integer>> set = new HashSet<>();
-
-        Collections.sort(A);
-
-//        for(int i = 0; i < A.size(); i++) {
-//           System.out.println( A.get(i));
-//        }
-
-        for(int i = 0; i < A.size()-2; i++) {
-            for(int j = i+1; j < A.size()-1; j++) {
-                for(int k=j+1; k < A.size(); k++) {
-                    if(A.get(i) + A.get(j) + A.get(k) == 0) {
-                        ArrayList<Integer> list = new ArrayList<>();
-                        list.add(A.get(i));
-                        list.add(A.get(j));
-                        list.add(A.get(k));
-                        set.add(list);
-                    }
-                }
-            }
+        String str = "";
+        while(a > 0) {
+            int temp = (int) a % 10;
+            str += Integer.toString(temp);
+            a /= 10;
         }
-
-        for(ArrayList<Integer> s : set) {
-            arr.add(s);
-            System.out.println(s);
-        }
-
-
-        return arr;
-
+        System.out.println(str);
+        System.out.println(Integer.parseInt(str));
+        String str1 = String.valueOf(1234);
+        return 0;
     }
 }
