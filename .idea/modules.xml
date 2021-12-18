@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/arrays/arrays.iml" filepath="$PROJECT_DIR$/arrays/arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bitmanipulation/bitmanipulation.iml" filepath="$PROJECT_DIR$/bitmanipulation/bitmanipulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/matrix/matrix.iml" filepath="$PROJECT_DIR$/matrix/matrix.iml" />
       <module fileurl="file://$PROJECT_DIR$/patterns/patterns.iml" filepath="$PROJECT_DIR$/patterns/patterns.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/repos.iml" filepath="$PROJECT_DIR$/.idea/repos.iml" />
