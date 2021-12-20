@@ -26,6 +26,17 @@ public class ReverseBits {
         return res;
     }
 
+    public long reverse2(long a) {
+
+        long ans = 0;
+        for(int i = 31; i >= 0; i--) {
+            ans += (a%2)*Math.pow(2,i);
+            a /= 2;
+        }
+
+        return ans;
+    }
+
     public long reverse1(long A) {
         long rev = 0;
 

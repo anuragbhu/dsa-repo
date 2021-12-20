@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/matrix/matrix.iml" filepath="$PROJECT_DIR$/matrix/matrix.iml" />
       <module fileurl="file://$PROJECT_DIR$/patterns/patterns.iml" filepath="$PROJECT_DIR$/patterns/patterns.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/repos.iml" filepath="$PROJECT_DIR$/.idea/repos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slidingwindow/slidingwindow.iml" filepath="$PROJECT_DIR$/slidingwindow/slidingwindow.iml" />
       <module fileurl="file://$PROJECT_DIR$/sorting/sorting.iml" filepath="$PROJECT_DIR$/sorting/sorting.iml" />
       <module fileurl="file://$PROJECT_DIR$/strings/strings.iml" filepath="$PROJECT_DIR$/strings/strings.iml" />
     </modules>
