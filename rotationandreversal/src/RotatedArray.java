@@ -11,4 +11,23 @@ public class RotatedArray {
 
         return min;
     }
+
+    public int findMin1(final List<Integer> a) {
+        int index = 0;
+        int lo=0, hi=a.size()-1;
+
+
+        while(lo<=hi){
+            int mid = lo + (hi-lo)/2;
+
+            if(a.get(mid) > a.get(0)) {
+                lo = mid + 1;
+            } else {
+                index = mid;
+                hi = mid - 1;
+            }
+        }
+
+        return a.get(index);
+    }
 }
