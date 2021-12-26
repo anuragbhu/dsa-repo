@@ -20,4 +20,27 @@ public class EquilibriumPoint {
 
         return -1;
     }
+
+    public static int equilibriumPoint1(long arr[], int n) {
+
+        int leftSum = 0, rightSum = 0;
+
+        for(int i = 0; i < n; i++) {
+
+            rightSum += arr[i];
+        }
+
+        for(int i = 0; i < n; i++) {
+
+            rightSum -= arr[i];
+
+            if(leftSum == rightSum) {
+                return (i+1);
+            }
+
+            leftSum += arr[i];
+        }
+
+        return -1;
+    }
 }
