@@ -33,5 +33,36 @@ public class Flip {
         return res;
     }
 
+    public ArrayList<Integer> flip1(String a) {
+        ArrayList<Integer> res = new ArrayList<Integer>();
+
+        int diff = 0, left = 0, right = 0, ansDiff = 0, resLeft = -1, resRight = -1;
+        for(int i = 0; i < a.length(); i++) {
+            if(a.charAt(i) == '0')
+                diff++;
+            else diff--;
+
+            if(diff > ansDiff) {
+                ansDiff = diff;
+                resLeft = left + 1; // Indexing start from 1.
+                resRight = right + 1;
+            }
+
+            if(diff < 0) {
+                diff = 0;
+                left = i + 1;
+            }
+
+            right++;
+        }
+        if(resLeft == -1 && resRight == -1)
+            return res;
+
+        res.add(resLeft);
+        res.add(resRight);
+
+        return res;
+    }
+
 
 }
