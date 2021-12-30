@@ -5,6 +5,9 @@ public class SieveOfEratosthenes {
 
         ArrayList<Integer> res = new ArrayList<Integer>();
 
+        if(N <= 1)
+            return res;
+
         for (int i = 2; i <= N; i++) {
             boolean isPrime = true;
             for(int j = 2; j < i; j++) {
@@ -23,6 +26,9 @@ public class SieveOfEratosthenes {
     static ArrayList<Integer> sieveOfEratosthenes1(int N){
 
         ArrayList<Integer> res = new ArrayList<Integer>();
+
+        if(N <= 1)
+            return res;
 
         for (int i = 2; i <= N; i++) {
             boolean isPrime = true;
@@ -43,6 +49,9 @@ public class SieveOfEratosthenes {
 
         ArrayList<Integer> res = new ArrayList<Integer>();
 
+        if(N <= 1)
+            return res;
+
         for (int i = 2; i <= N; i++) {
             boolean isPrime = true;
             for(int j = 2; j <= Math.sqrt(i); j++) {
@@ -61,6 +70,10 @@ public class SieveOfEratosthenes {
     static ArrayList<Integer> sieveOfEratosthenes3(int N){
 
         ArrayList<Integer> res = new ArrayList<Integer>();
+
+        if(N <= 1)
+            return res;
+
         boolean[] prime = new boolean[N+1];
 
         for(int i = 0; i <= N; i++) {
