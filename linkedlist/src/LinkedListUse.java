@@ -19,10 +19,43 @@ public class LinkedListUse {
         }
     }
 
+    public static void increment(Node<Integer> head) {
+        Node<Integer> temp = head; // Common Practice
+        while(temp != null) {
+            temp.data++;
+            temp = temp.next;
+        }
+        print(head);
+    }
+
+    public static int length(Node<Integer> head) {
+        int count = 0;
+        while(head != null) {
+            count++;
+            head = head.next;
+        }
+
+        return count;
+    }
+
+    public static int ithNode(Node<Integer> head, int index) {
+        int count = 0;
+        while(head != null) {
+            if(count == index)
+                return head.data;
+            count++;
+            head = head.next;
+        }
+        return Integer.MIN_VALUE;
+    }
+
     public static void main(String[] args) {
 
         Node<Integer> head = createLinkedList();
         print(head);
+        increment(head);
+        System.out.println(length(head));
+        System.out.println(ithNode(head, 2));
 
 //        Node<Integer> n1 = new Node<>(10);
 //        System.out.println(n1);
