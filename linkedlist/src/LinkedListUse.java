@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class LinkedListUse {
 
     public static Node<Integer> createLinkedList() {
@@ -49,13 +51,42 @@ public class LinkedListUse {
         return Integer.MIN_VALUE;
     }
 
+    public static Node<Integer> takeInput() {
+        Node<Integer> head = null;
+        Scanner sc = new Scanner(System.in);
+        int data = sc.nextInt(); // -1 that we are at end of the LL.
+
+        while(data != -1) {
+            Node<Integer> currentNode = new Node<>(data);
+            if(head == null) {
+                // This node is the head node
+                head = currentNode;
+            } else {
+                Node<Integer> tail = head;
+                while(tail.next != null) {
+                    tail = tail.next;
+                }
+                // Now, we are at last node.
+                // Here, we can connect current node after last node
+                tail.next = currentNode;
+            }
+            data = sc.nextInt();
+        }
+
+        sc.close();
+        return head;
+    }
+
     public static void main(String[] args) {
 
-        Node<Integer> head = createLinkedList();
+//        Node<Integer> head = createLinkedList();
+//        print(head);
+//        increment(head);
+//        System.out.println(length(head));
+//        System.out.println(ithNode(head, 2));
+
+        Node<Integer> head = takeInput();
         print(head);
-        increment(head);
-        System.out.println(length(head));
-        System.out.println(ithNode(head, 2));
 
 //        Node<Integer> n1 = new Node<>(10);
 //        System.out.println(n1);
