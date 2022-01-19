@@ -1,4 +1,4 @@
-public interface InsertNodeAtSpecificPositionInLinkedList {
+public class InsertNodeAtSpecificPositionInLinkedList {
     public static Node insertNodeAtPosition(Node llist, int data, int position) {
         Node head = llist;
         Node node = new Node(data);
