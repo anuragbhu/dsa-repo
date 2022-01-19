@@ -7,7 +7,7 @@ public class NodeAtGivenIndexInLinkedList {
         while (current != null)
         {
             if (count == ind-1)
-                return current.data;
+                return (int) current.data;
             count++;
             current = current.next;
         }
