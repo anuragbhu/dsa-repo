@@ -11,7 +11,7 @@ public class MergeListsAlternatingly {
             first = node1Next;
 
             node2Next = second.next;
-            second.next = node1Next;
+            second.next = node1Next; // Connect
             second = node2Next;
         }
 
