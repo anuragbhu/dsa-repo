@@ -1,8 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class Test {
-
+public class HashMapImpl {
     public static void main(String[] args) {
         HashMap<String, Integer> map = new HashMap<>();
 
@@ -62,13 +61,12 @@ public class Test {
         freq.put("word", count + 1);
 
         // TestForNull
-        Integer count1 = freq.get("wordq");
+        Integer count1 = freq.get("word");
         if (count1 == null) {
-            freq.put("wordq", 1);
+            freq.put("word", 1);
         }
         else {
-            freq.put("wordq", count1 + 1);
-            System.out.println(freq.get("wordq") + "Test");
+            freq.put("word", count + 1);
         }
 
         // Key existence check in HashMap

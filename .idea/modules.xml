@@ -17,6 +17,7 @@
       <module fileurl="file://$PROJECT_DIR$/rotationandreversal/rotationandreversal.iml" filepath="$PROJECT_DIR$/rotationandreversal/rotationandreversal.iml" />
       <module fileurl="file://$PROJECT_DIR$/slidingwindow/slidingwindow.iml" filepath="$PROJECT_DIR$/slidingwindow/slidingwindow.iml" />
       <module fileurl="file://$PROJECT_DIR$/sorting/sorting.iml" filepath="$PROJECT_DIR$/sorting/sorting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stack/stack.iml" filepath="$PROJECT_DIR$/stack/stack.iml" />
       <module fileurl="file://$PROJECT_DIR$/stringalgorithmone/stringalgorithmone.iml" filepath="$PROJECT_DIR$/stringalgorithmone/stringalgorithmone.iml" />
       <module fileurl="file://$PROJECT_DIR$/strings/strings.iml" filepath="$PROJECT_DIR$/strings/strings.iml" />
     </modules>
