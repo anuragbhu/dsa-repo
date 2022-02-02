@@ -2,20 +2,21 @@ public class StackUse {
 
     public static void main(String[] args) throws StackFullException, StackEmptyException {
 
-        StackUsingArray stackUsingArray = new StackUsingArray();
+//        StackUsingArray stack = new StackUsingArray();
+        StackUsingLL<Integer> stack = new StackUsingLL<>();
         int[] arr = {1, 2, 3, 4, 5};
 
         for (int j : arr) {
-            stackUsingArray.push(j);
+            stack.push(j);
         }
 
-        while (! stackUsingArray.isEmpty()) {
-            System.out.println(stackUsingArray.pop());
+        while (! stack.isEmpty()) {
+            System.out.println(stack.pop());
         }
 
-        stackUsingArray.push(10);
-        System.out.println(stackUsingArray.pop());
+        stack.push(10);
+        System.out.println(stack.pop());
 //        System.out.println(stackUsingArray.pop());
-        System.out.println(stackUsingArray.size());
+        System.out.println(stack.size());
     }
 }

@@ -4,7 +4,7 @@ public class StackUsingArray {
     private int topIndex;
 
     public StackUsingArray() {
-        data = new int[10];
+        data = new int[2];
         topIndex = -1;
     }
 
@@ -27,10 +27,21 @@ public class StackUsingArray {
     public void push(int element) throws StackFullException {
         // If Stack is full.
         if(topIndex == data.length-1) {
-            throw new StackFullException();
+//            throw new StackFullException();
+            doubleCapacity();
         }
         topIndex++;
         data[topIndex] = element;
+    }
+
+    // // Time Complexity = O(n)
+    private void doubleCapacity() {
+        System.out.println("Double Capacity");
+        int[] temp = data;
+        data = new int[temp.length * 2];
+        for(int i = 0; i < temp.length; i++) {
+            data[i] = temp[i];
+        }
     }
 
     // Time Complexity = O(1)
