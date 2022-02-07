@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Main {
 
@@ -10,6 +11,7 @@ public class Main {
         sc.nextLine();
         String str = sc.nextLine();
 
+        Stack<Character> stack = new Stack<>();
         LinkedList<Integer> ll = new LinkedList<>();
         ll.add(0);
         int index = 0;
@@ -21,10 +23,6 @@ public class Main {
 
             }
         }
-
-
-
-
         sc.close();
     }
 
