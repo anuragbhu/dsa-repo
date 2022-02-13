@@ -1,4 +1,4 @@
-/*The structure of the node of the queue is
+//The structure of the node of the queue is
 class QueueNode
 {
 	int data;
@@ -8,7 +8,7 @@ class QueueNode
 	    data = a;
 	    next = null;
 	}
-}*/
+}
 
 public class ImplementQueueUsingLinkedList {
     QueueNode front, rear;
