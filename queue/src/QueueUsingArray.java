@@ -1,5 +1,6 @@
 public class QueueUsingArray {
 
+    // LeetCode Circular Queue design
     private int[] data;
     private int front; // index of the element at the front of the queue
     private int rear; // index of the element at the rear of the queue
@@ -9,13 +10,13 @@ public class QueueUsingArray {
     // unless you define another constructor. Any uninitialised fields will be set to their default values.
     public QueueUsingArray() {
         data = new int[5];
-        front = -1;
+        front = 0;
         rear = -1;
     }
 
     public QueueUsingArray(int capacity) {
         data = new int[capacity];
-        front = -1;
+        front = 0;
         rear = -1;
     }
 
@@ -34,10 +35,6 @@ public class QueueUsingArray {
         if(size == data.length) {
 //            throw new QueueFullException();
             doubleCapacity();
-        }
-
-        if(size == 0) {
-            front = 0;
         }
 //        rear++;
 //        // Circular Queue
