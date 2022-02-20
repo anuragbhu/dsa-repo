@@ -1,12 +1,10 @@
 import java.util.ArrayList;
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
 
 public class SlidingWindowMaximum {
     public ArrayList<Integer> slidingMaximum(final List<Integer> A, int B) {
 
-        ArrayList<Integer> res = new ArrayList<Integer>();
+        ArrayList<Integer> res = new ArrayList<>();
 
         if(A.size() == 1) {
             res.add(A.get(0));
