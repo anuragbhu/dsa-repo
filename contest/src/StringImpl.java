@@ -32,6 +32,7 @@ public class StringImpl {
 
         // Converts a string to upper case letters i.e. "HI"
         System.out.println(myStr1.toUpperCase());
+        System.out.println(myStr1); // Hi
 
         // Converts a string to lower case letters i.e. "hi"
         System.out.println(myStr1.toLowerCase());
