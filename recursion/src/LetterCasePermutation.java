@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class LetterCasePermutation {
     static int count = 1; // size of output list
@@ -36,8 +38,39 @@ public class LetterCasePermutation {
         count += count;
     }
 
+    public static List<String> letterCasePermutation1(String s) {
+
+        int n = s.length();
+
+        HashMap<String, Integer> ans = new HashMap<>();
+
+        int max = 1 << n;
+
+        String str = s.toLowerCase();
+
+        for(int i = 0; i < max ; i++){
+            String comb = str;
+            for(int j = 0; j < n; j++){
+                char ch = str.charAt(j);
+                if(ch >= 'a'  && ch <= 'z'){
+                    if((i & 1<<j) != 0){
+                        ch -= 32;
+                        comb = comb.substring(0, j) + ch + comb.substring(j + 1);
+                    }
+                }
+            }
+            ans.put(comb, 1);
+        }
+
+        for(Map.Entry<String, Integer> entry : ans.entrySet()){
+            res.add(entry.getKey());
+        }
+
+        return res;
+    }
+
     public static void main(String[] args) {
-        List<String> ans = letterCasePermutation("ABC");
+        List<String> ans = letterCasePermutation1("a1b2");
 
         for(String temp : ans) {
             System.out.println(temp);

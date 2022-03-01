@@ -17,4 +17,32 @@ public class SubsequencesOfString {
         }
         return a;
     }
+
+    public static ArrayList<String> subsequences1(String s) {
+        ArrayList<String> res = new ArrayList<>();
+        generate("", 0, s, res);
+        return res;
+    }
+
+    public static void generate(String curr, int index, String s, ArrayList<String> res) {
+
+        if(index == s.length()) {
+            if(curr.length() != 0)
+                res.add(curr);
+            return;
+        }
+
+        generate(curr, index+1, s, res);
+
+        curr += s.charAt(index);
+        generate(curr, index+1, s, res);
+
+        curr = curr.substring(0, curr.length() - 1);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(subsequences1("p"));
+        System.out.println(subsequences1("hq"));
+        System.out.println(subsequences("ghu"));
+    }
 }
