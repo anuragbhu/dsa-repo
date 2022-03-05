@@ -57,6 +57,10 @@ public class BTZigzagLevelOrderTraversal {
             start++;
             end--;
         }
+
+        // Or Use this.
+        // Collections.reverse(arr);
+
         return arr;
     }
 }

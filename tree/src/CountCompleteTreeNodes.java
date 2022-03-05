@@ -6,8 +6,8 @@ public class CountCompleteTreeNodes {
         }
 
         int leftNodes = countNodes(root.left);
-        int rightNoeds = countNodes(root.right);
+        int rightNodes = countNodes(root.right);
 
-        return leftNodes + rightNoeds + 1;
+        return leftNodes + rightNodes + 1;
     }
 }
