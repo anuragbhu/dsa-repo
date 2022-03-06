@@ -1,7 +1,4 @@
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class HashMapImpl {
     public static void main(String[] args) {
@@ -127,19 +124,39 @@ public class HashMapImpl {
         hm.put(2, "Geeks");
         hm.put(1, "Geeks");
         hm.put(4, "For");
+        hm.put(5, "Anurag");
 
         // Printing the mappings to the console
         System.out.println("Initial Map : " + hm);
 
         // Removing the mapping with Key 4
-        hm.remove(1);
+        hm.remove(4);
 
         System.out.println("Updated Map : " + hm);
 
-        // TreeMap in Java
+        // TreeMap in Java --> Sort a map according to its key.
         // The map is sorted according to the natural ordering of its keys
         // TreeMap in Java does not allow null keys (like Map) and thus a NullPointerException is thrown.
         // However, multiple null values can be associated with different keys.
         TreeMap<Integer, String> tree_map = new TreeMap<Integer, String>();
+
+
+        // Map implementation with duplicate values (if keys then make it as values, due to map property)
+        // Example
+        TreeMap<Integer, List<Integer>> hmap = new TreeMap<>();
+        int keys = 1;
+        int values = 100;
+        if (hmap.containsKey(keys)) {
+            hmap.get(keys).add(values);
+        } else {
+            List<Integer> temp = new ArrayList<>();
+            temp.add(values);
+            hmap.put(keys, temp);
+        }
+        // Iterate
+        for(int key : hmap.keySet()) {
+            List<Integer> list = new ArrayList(hmap.get(key));
+            // add code here
+        }
     }
 }
