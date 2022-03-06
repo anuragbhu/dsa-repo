@@ -1,8 +1,17 @@
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class HashMapImpl {
     public static void main(String[] args) {
+        // Map in Java
+
+        // HashMap<K, V>
+        // One object is used as a key (index) to another object (value).
+        // If you try to insert the duplicate key, it will replace the element of the corresponding key.
+        // It allows null keys, but there should be only one null key object & there can be any number of null values.
+        // This class makes no guarantees as to the order of the map.
         HashMap<String, Integer> map = new HashMap<>();
 
         // HashMap(int initialCapacity) Constructor
@@ -87,7 +96,7 @@ public class HashMapImpl {
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             System.out.println(entry.getKey() + "/" + entry.getValue());
         }
-
+        System.out.println();
         // On Java 10+:
         for (var entry : map.entrySet()) {
             System.out.println(entry.getKey() + "/" + entry.getValue());
@@ -98,5 +107,39 @@ public class HashMapImpl {
         The advantage of self-balancing bst is, we get the worst case (when every key maps to the same slot)
         search time is O(Log n).
          */
+
+        int val = map.getOrDefault("Anurag", -1);
+        System.out.println("getOrDefault :" + val);
+
+        for (String key : map.keySet()) {
+            System.out.println(key + "/" + map.get(key));
+        }
+
+        // Three ways: HashMap, LinkedHashMap, TreeMap
+
+        // LinkedHashMap in Java
+        // The LinkedHashMap Class is just like HashMap with an additional feature of maintaining an order of
+        // elements inserted into it.
+
+        // Initialization of a LinkedHashMap using Generics
+        LinkedHashMap<Integer, String> hm = new LinkedHashMap<Integer, String>();
+        hm.put(3, "Geeks");
+        hm.put(2, "Geeks");
+        hm.put(1, "Geeks");
+        hm.put(4, "For");
+
+        // Printing the mappings to the console
+        System.out.println("Initial Map : " + hm);
+
+        // Removing the mapping with Key 4
+        hm.remove(1);
+
+        System.out.println("Updated Map : " + hm);
+
+        // TreeMap in Java
+        // The map is sorted according to the natural ordering of its keys
+        // TreeMap in Java does not allow null keys (like Map) and thus a NullPointerException is thrown.
+        // However, multiple null values can be associated with different keys.
+        TreeMap<Integer, String> tree_map = new TreeMap<Integer, String>();
     }
 }

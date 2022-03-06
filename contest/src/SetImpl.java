@@ -14,7 +14,7 @@ public class SetImpl {
         // same as mathematical set.
         // Set is an interface, objects cannot be created
         // We always need a class that extends this list in order to create an object.
-        // Two ways: HashSet, LinkedHashSet, TreeSet
+        // Three ways: HashSet, LinkedHashSet, TreeSet
 
         // HashSet class which is implemented in the collection framework, is an
         // inherent implementation of the hash table data structure (do not guarantee to be inserted in the same order.)
@@ -23,14 +23,15 @@ public class SetImpl {
         // LinkedHashSet class which is implemented in the collection's framework,
         // is an ordered version (the order in which they were inserted),
         // of HashSet that maintains a doubly-linked List across all elements.
-        Set<String> lh = new LinkedHashSet<String>();
+        Set<String> lh = new LinkedHashSet<>();
 
         // TreeSet which is an implementation of a self-balancing tree.
         // Objects are stored in sorted, ascending order.
-        Set<String> ts = new TreeSet<String>();
+        // The insertion of null values into a TreeSet throws NullPointerException
+        Set<String> ts = new TreeSet<>();
 
-        Set<String> hash_Set = new HashSet<String>();
-        Set<String> hs = new HashSet<String>();
+        Set<String> hash_Set = new HashSet<>();
+        Set<String> hs = new HashSet<>();
 
         // Adding elements to the Set : return boolean value
         hash_Set.add("Geeks");
