@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/arrayalgorithmone/arrayalgorithmone.iml" filepath="$PROJECT_DIR$/arrayalgorithmone/arrayalgorithmone.iml" />
       <module fileurl="file://$PROJECT_DIR$/arrays/arrays.iml" filepath="$PROJECT_DIR$/arrays/arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/binarysearchtree/binarysearchtree.iml" filepath="$PROJECT_DIR$/binarysearchtree/binarysearchtree.iml" />
       <module fileurl="file://$PROJECT_DIR$/bitmanipulation/bitmanipulation.iml" filepath="$PROJECT_DIR$/bitmanipulation/bitmanipulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/contest/contest.iml" filepath="$PROJECT_DIR$/contest/contest.iml" />
       <module fileurl="file://$PROJECT_DIR$/dynamicprogramming/dynamicprogramming.iml" filepath="$PROJECT_DIR$/dynamicprogramming/dynamicprogramming.iml" />

@@ -9,6 +9,7 @@ public class Conversion {
         // int to String
         String s = String.valueOf(i); // Output: "200"
         String ss = Integer.toString(i); // Output: "200"
+        String ssss = 0 + " " + 1;
 
         // char to int
         char ch = '1';

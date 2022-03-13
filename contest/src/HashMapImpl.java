@@ -158,5 +158,23 @@ public class HashMapImpl {
             List<Integer> list = new ArrayList(hmap.get(key));
             // add code here
         }
+
+
+
+        // HashMap of HashMap ---> In this case, we may combine key & value and store in HashSet as a unique element.
+        HashMap<HashMap, Boolean> temp = new HashMap<>();
+
+        HashMap<Integer, Integer> subMap = new HashMap<>();
+        subMap.put(1, 2);
+
+        // Mapping the HashMap of HashMap
+        temp.put(map, false);
+
+        // Check if HashMap exits in HashMap of HashMap
+        HashMap<Integer, Integer> map1 = new HashMap<>();
+        map1.put(0, 0);
+        if (temp.containsKey(map1)) {
+            temp.put(map1, true);
+        }
     }
 }
