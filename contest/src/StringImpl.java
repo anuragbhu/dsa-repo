@@ -23,6 +23,7 @@ public class StringImpl {
         String myStr2 = "Another String";
 
         // Compares two strings. Returns true if the strings are equal, and false if not i.e. false
+        // As String is an Object so, we cannot use == sign. Since, it compares address.
         System.out.println(myStr1.equals(myStr2));
 
         String myStr3 = "HELLO";

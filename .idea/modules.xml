@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/bitmanipulation/bitmanipulation.iml" filepath="$PROJECT_DIR$/bitmanipulation/bitmanipulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/contest/contest.iml" filepath="$PROJECT_DIR$/contest/contest.iml" />
       <module fileurl="file://$PROJECT_DIR$/dynamicprogramming/dynamicprogramming.iml" filepath="$PROJECT_DIR$/dynamicprogramming/dynamicprogramming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hashmap/hashmap.iml" filepath="$PROJECT_DIR$/hashmap/hashmap.iml" />
       <module fileurl="file://$PROJECT_DIR$/heaporpriorityqueue/heaporpriorityqueue.iml" filepath="$PROJECT_DIR$/heaporpriorityqueue/heaporpriorityqueue.iml" />
       <module fileurl="file://$PROJECT_DIR$/kadanealgorithm/kadanealgorithm.iml" filepath="$PROJECT_DIR$/kadanealgorithm/kadanealgorithm.iml" />
       <module fileurl="file://$PROJECT_DIR$/linkedlist/linkedlist.iml" filepath="$PROJECT_DIR$/linkedlist/linkedlist.iml" />
@@ -24,6 +25,7 @@
       <module fileurl="file://$PROJECT_DIR$/stringalgorithmone/stringalgorithmone.iml" filepath="$PROJECT_DIR$/stringalgorithmone/stringalgorithmone.iml" />
       <module fileurl="file://$PROJECT_DIR$/strings/strings.iml" filepath="$PROJECT_DIR$/strings/strings.iml" />
       <module fileurl="file://$PROJECT_DIR$/tree/tree.iml" filepath="$PROJECT_DIR$/tree/tree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tries/tries.iml" filepath="$PROJECT_DIR$/tries/tries.iml" />
     </modules>
   </component>
 </project>

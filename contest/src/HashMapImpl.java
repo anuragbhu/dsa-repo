@@ -4,7 +4,7 @@ public class HashMapImpl {
     public static void main(String[] args) {
         // Map in Java
 
-        // HashMap<K, V>
+        // HashMap<K, V> ---> Implemented using Hash Table.
         // One object is used as a key (index) to another object (value).
         // If you try to insert the duplicate key, it will replace the element of the corresponding key.
         // It allows null keys, but there should be only one null key object & there can be any number of null values.
@@ -135,6 +135,7 @@ public class HashMapImpl {
         System.out.println("Updated Map : " + hm);
 
         // TreeMap in Java --> Sort a map according to its key.
+        // Implemented using Self Balancing BST (Insert, Delete, Search --- O(logn)
         // The map is sorted according to the natural ordering of its keys
         // TreeMap in Java does not allow null keys (like Map) and thus a NullPointerException is thrown.
         // However, multiple null values can be associated with different keys.
@@ -154,26 +155,24 @@ public class HashMapImpl {
             hmap.put(keys, temp);
         }
         // Iterate
-        for(int key : hmap.keySet()) {
+        for(int key : hmap.keySet()) { // Give keys in the form of set
             List<Integer> list = new ArrayList(hmap.get(key));
             // add code here
         }
 
-
-
-        // HashMap of HashMap ---> In this case, we may combine key & value and store in HashSet as a unique element.
+        // HashMap of HashMap ---> In this case, we may combine key & value and store in HashMap as a unique entity.
         HashMap<HashMap, Boolean> temp = new HashMap<>();
 
         HashMap<Integer, Integer> subMap = new HashMap<>();
         subMap.put(1, 2);
 
         // Mapping the HashMap of HashMap
-        temp.put(map, false);
+        temp.put(subMap, false);
 
         // Check if HashMap exits in HashMap of HashMap
         HashMap<Integer, Integer> map1 = new HashMap<>();
         map1.put(0, 0);
-        if (temp.containsKey(map1)) {
+        if (temp.containsKey(map1)) { // false
             temp.put(map1, true);
         }
     }

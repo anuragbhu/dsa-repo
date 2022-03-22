@@ -13,7 +13,7 @@ public class Conversion {
 
         // char to int
         char ch = '1';
-        int a = ch; // Output: 49 (ASCII VALUE)
+        int a = ch; // Output: 49 (ASCII VALUE) --- > ASCII range: 0 to 255
         int aa = Character.getNumericValue(ch); // Output: 1
         int aaa = Integer.parseInt(String.valueOf(ch)); // Output: 1
 
