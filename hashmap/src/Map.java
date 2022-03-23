@@ -43,7 +43,7 @@ public class Map<K,V> {
         }
     }
 
-    // For maintaining O(1), load factor < 0.75 (Default value = 0.75)
+    // For maintaining O(1), load factor < 0.75 (Default value = 0.75 - The default load factor is 75% of the capacity)
     public void insert(K key, V value) { // TC = O(1)
         int bucketIndex = getBucketIndex(key);
         MapNode<K,V> head = buckets.get(bucketIndex);
@@ -56,7 +56,7 @@ public class Map<K,V> {
             head = head.next;
         }
         // Element is not here. Insert at zeroth position of the Linked List.
-        head = buckets.get(bucketIndex); // As we now at null;
+        head = buckets.get(bucketIndex); // As we now at zeroth position;
         MapNode<K,V> newNode = new MapNode<>(key, value);
         newNode.next = head;
         buckets.set(bucketIndex, newNode);
