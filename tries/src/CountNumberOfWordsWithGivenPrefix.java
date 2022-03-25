@@ -3,10 +3,11 @@ public class CountNumberOfWordsWithGivenPrefix {
     public static void main(String[] args) {
         Trie t = new Trie();
 
-        String[] str = {"apk", "app", "apple", "arp", "array"};
+        String[] str = {"apk", "app", "apple", "appple", "apppple", "arp", "array"};
         String pre = "ap";
 
         insertWords(t, str);
+
         System.out.println(searchPrefixCount(t, pre));
     }
 

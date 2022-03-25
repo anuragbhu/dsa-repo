@@ -28,16 +28,23 @@ public class Trie {
     }
 
     private int countPrefix(TrieNode root, String prefix) {
-        for(int i = 0; i < prefix.length(); ++i)
-        {
-            int childIndex = prefix.charAt(0)-'a';
+        for(int i = 0; i < prefix.length(); ++i) {
+            int childIndex = prefix.charAt(i)-'a';
             if(root.children[childIndex] == null || root.childCount == 0)
-                return 0;   //No string with given prefix is present
+                return 0;   // No string with given prefix is present
             root = root.children[childIndex];
         }
-        return root.childCount;
+        int count = 0;
+        TrieNode temp = root;
+        int childIndex = prefix.charAt(prefix.length()-1)-'a';
+        while(temp.children[childIndex] != null) { // Checking for last repeating character in prefix
+            count++;
+            temp = temp.children[childIndex];
+        }
+        return root.childCount + count;
     }
 
+    // TC: O(n*l) where n = number of words inserted in Trie and l = length of longest word inserted in Trie.
     public int countPrefix(String prefix) {
         return countPrefix(root, prefix);
     }
