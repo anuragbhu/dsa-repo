@@ -27,6 +27,25 @@ public class Trie {
         numWords = 0;
     }
 
+    private TrieNode findWord(TrieNode root, String word) {
+        if(word.length() == 0) {
+            return root;
+        }
+
+        int childIndex = word.charAt(0) - 'a';
+        TrieNode child = root.children[childIndex];
+        if(child == null) {
+            // Child is not present
+            return null;
+        }
+        return findWord(child, word.substring(1));
+    }
+    // Time Complexity = O(L); where, L is the length of the String.
+    // return the last node of the character
+    public TrieNode findWord(String word) {
+        return findWord(root, word);
+    }
+
     private int countPrefix(TrieNode root, String prefix) {
         for(int i = 0; i < prefix.length(); ++i) {
             int childIndex = prefix.charAt(i)-'a';
