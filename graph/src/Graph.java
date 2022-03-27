@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Graph {
+    // Worst case Time Complexity: O(N * N), Auxiliary Space: O(N + 2E)
     // Implementation of Adjacency List
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

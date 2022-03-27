@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Graphs {
 
+    // Worst case Time Complexity: O(N * N), Auxiliary Space: O(N * N)
     // Implementation of Adjacency Matrix
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
