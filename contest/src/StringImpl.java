@@ -78,5 +78,16 @@ public class StringImpl {
         String str1 = "GeeksforGeeksforStudents";
         String[] arrOfStr = str1.split("for");
 
+        // For converting array of characters to string don't use for loop like
+        char[] ch = {'a', 'e', 'i', 'o', 'u'};
+        /*
+            String ans = "";
+            for(char ele : ch) {
+                ans += ele;
+            }
+         */
+        // Instead use: Very Important
+        String ans = String.valueOf(ch);
+
     }
 }
