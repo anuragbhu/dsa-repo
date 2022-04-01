@@ -5,13 +5,11 @@ import java.util.Scanner;
 Depth First Traversal (or Search) for a graph is similar to Depth First Traversal of a tree.
 The only catch here is, unlike trees, graphs may contain cycles (a node may be visited twice).
 To avoid processing a node more than once, use a boolean visited array.
-
  */
 
 public class DFS {
 
     // Adjacency Matrix: TC = O(N * N), Adjacency List: TC = O(N + 2E)
-    // Smaller to Higher Value Print
     // Pre-Order Traversal in Tree
     public static void dfTraversal(int[][] adjMatrix, int currentVertex, boolean[] visited) {
         System.out.print(currentVertex + " ");

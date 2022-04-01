@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class NthTermFibonacci {
     public static int fib(int n, int[] arr, List<Integer> count) {
 
-        if(n == 0 || n == 1) {
+        if(n == 0 || n == 1) { // Seed term of Fibonacci Series
             return n;
         }
 

@@ -3,6 +3,12 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
+/*
+    Breadth-First Traversal (or Search) for a graph is similar to Breadth-First Traversal of a tree.
+    The only catch here is, unlike trees, graphs may contain cycles, so we may come to the same node again.
+    To avoid processing a node more than once, we use a boolean visited array.
+ */
+
 public class BFS {
     // Adjacency Matrix: TC = O(N * N), Adjacency List: TC = O(N + 2E)
     // Level Order Traversal in Tree
@@ -57,8 +63,9 @@ public class BFS {
     }
 
     // Function to return Breadth First Traversal of given graph.
-    public ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
-        boolean visited[] = new boolean[V];
+    // Function for without components consideration
+    public ArrayList<Integer> bfsOfGraph1(int V, ArrayList<ArrayList<Integer>> adj) {
+        boolean[] visited = new boolean[V];
         Queue<Integer> pendingVertices = new LinkedList<>();
         ArrayList<Integer> res = new ArrayList<>();
         visited[0] = true;
@@ -75,5 +82,35 @@ public class BFS {
             }
         }
         return res;
+    }
+
+    // Function for with components consideration
+    public ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
+        boolean[] visited = new boolean[V];
+        ArrayList<Integer> res = new ArrayList<>();
+        // Traversing through all the nodes.
+        for (int i = 0; i < visited.length; i++) {
+            if (!visited[i]) {
+                bfsOfGraph(adj, i, res, visited);
+            }
+        }
+        return res;
+    }
+
+    public static void bfsOfGraph(ArrayList<ArrayList<Integer>> adj, int currentVertex, ArrayList<Integer> res, boolean[] visited) {
+        Queue<Integer> pendingVertices = new LinkedList<>();
+        visited[currentVertex] = true;
+        pendingVertices.add(currentVertex);
+
+        while(!pendingVertices.isEmpty()) {
+            int front = pendingVertices.poll();
+            res.add(front);
+            for(int ele : adj.get(front)) {
+                if(!visited[ele]) {
+                    pendingVertices.add(ele);
+                    visited[ele] = true;
+                }
+            }
+        }
     }
 }
