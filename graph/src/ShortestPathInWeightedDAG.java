@@ -9,6 +9,14 @@ class Pair {
         this.vertex = vertex;
         this.weight = weight;
     }
+
+    public int getVertex() {
+        return vertex;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
 }
 
 public class ShortestPathInWeightedDAG {
@@ -22,8 +30,8 @@ public class ShortestPathInWeightedDAG {
             int node = stack.pop();
             if(distance[node] != Integer.MAX_VALUE) {
                 for(Pair pair : adj.get(node)) {
-                    if((distance[node] + pair.weight) < distance[pair.vertex]) { // Condition to modify distance
-                        distance[pair.vertex] = distance[node] + pair.weight;
+                    if((distance[node] + pair.getWeight()) < distance[pair.getVertex()]) { // Condition to modify distance
+                        distance[pair.getVertex()] = distance[node] + pair.getWeight();
                     }
                 }
             }
@@ -33,7 +41,7 @@ public class ShortestPathInWeightedDAG {
     public static void dfTraversal(ArrayList<ArrayList<Pair>> adj, int currentVertex, boolean[] visited, Stack<Integer> stack) {
         visited[currentVertex] = true;
         for(int i = 0; i < adj.get(currentVertex).size(); i++) {
-            int node = adj.get(currentVertex).get(i).vertex;
+            int node = adj.get(currentVertex).get(i).getVertex();
             if(!visited[node])  {
                 dfTraversal(adj, node, visited, stack);
             }
