@@ -28,7 +28,7 @@ public class ShortestPathInWeightedDAG {
         distance[src] = 0;
         while(!stack.isEmpty()) {
             int node = stack.pop();
-            if(distance[node] != Integer.MAX_VALUE) {
+            if(distance[node] != Integer.MAX_VALUE) { // It means that we have reached this node.
                 for(Pair pair : adj.get(node)) {
                     if((distance[node] + pair.getWeight()) < distance[pair.getVertex()]) { // Condition to modify distance
                         distance[pair.getVertex()] = distance[node] + pair.getWeight();
@@ -90,6 +90,10 @@ public class ShortestPathInWeightedDAG {
         topoSort(n, adj, src, distance);
 
         for (int i = 0; i < n; i++) {
+            if(distance[i] == Integer.MAX_VALUE) {
+                System.out.println("INF");
+                continue;
+            }
             System.out.println("Shortest distance between source vertex " + src + " to destination vertex " + i +
                     " is:" + " " + distance[i]);
         }
