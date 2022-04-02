@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// For non-connected graph, we cannot find MST. It can only find for one component only.
+// For MST, graph has to be a weighted graph.
 // Time Complexity: O(V^2)
 // Space Complexity: O(V) + O(V) + O(V) (Key Array, MST Array, Parent Array)
 public class PrimsAlgorithm {
