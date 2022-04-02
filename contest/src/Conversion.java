@@ -39,5 +39,22 @@ public class Conversion {
         // char Array to String
         char[] chArray = {'w', 'e', 'l', 'c', 'o', 'm', 'e', ' ' , 't', 'o', ' ', 'J', 'a', 'v', 'a'};
         String string1 = new String(chArray);
+
+        // Char to ASCII
+        StringBuilder str5 = new StringBuilder(); // In place of String str5 = "";
+        for(int ii = 0; ii < s.length(); ii++) {
+            int ascii = s.charAt(ii);
+            if(ascii >= 65 && ascii <= 90) { // For Upper-Case
+                ascii += 32;
+                char ch5 = (char) ascii;
+                str5.append(ch5); // Only used with String Builder. In place of str5 += ch5;
+            } else if(ascii >= 97 && ascii <= 122) { // For Lower-Case
+                char ch5 = (char) ascii;
+                str5.append(ch5);
+            } else if(ascii >= 48 && ascii <= 57) { // For Numeric
+                char ch5 = (char) ascii;
+                str5.append(ch5);
+            }
+        }
     }
 }
