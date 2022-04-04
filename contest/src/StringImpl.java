@@ -78,6 +78,9 @@ public class StringImpl {
         String str1 = "GeeksforGeeksforStudents";
         String[] arrOfStr = str1.split("for");
 
+        // Similarly, String[] levels1 = version1.split("\\.");
+        // version1 = "1.01", version1 = "1.001", version1 = "1.0", version1 = "1.0.0"
+
         // For converting array of characters to string don't use for loop like
         char[] ch = {'a', 'e', 'i', 'o', 'u'};
         /*

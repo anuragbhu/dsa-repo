@@ -41,6 +41,7 @@ public class Conversion {
         String string1 = new String(chArray);
 
         // Char to ASCII
+        // For char to String append only. Not for String to String append (Here we can use String concat).
         StringBuilder str5 = new StringBuilder(); // In place of String str5 = "";
         for(int ii = 0; ii < s.length(); ii++) {
             int ascii = s.charAt(ii);
