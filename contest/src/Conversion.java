@@ -19,8 +19,8 @@ public class Conversion {
 
         // int to char
         char c = (char) a; // Input: 49 (ASCII VALUE) to Output: '1'
-        int aInt = '1';
-        char cc = (char)aInt; // // Input: 1 to Output: '1'
+        int aInt = 1;
+        char cc = (char) (aInt + '0'); // // Input: 1 to Output: '1'
 
         // String to char
         String sss = "hello";
