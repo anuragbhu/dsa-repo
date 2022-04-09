@@ -8,8 +8,8 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Hello".substring(0, 1));
+        System.out.println(Math.random());
+
         sc.close();
     }
-
 }

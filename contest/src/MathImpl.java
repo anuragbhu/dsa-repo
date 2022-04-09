@@ -52,5 +52,8 @@ public class MathImpl {
         System.out.println(Math.sqrt(-4.7)); // NaN
         System.out.println(Math.sqrt(25.0)); // 5.0
         System.out.println(Math.sqrt(3)); // 1.7320508075688772
+
+        // Return double type number greater than or equal to 0.0 and less than 1.0
+        System.out.println(Math.random());
     }
 }
