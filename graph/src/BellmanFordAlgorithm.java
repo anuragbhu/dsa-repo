@@ -26,6 +26,8 @@ class Nodes1 {
 }
 
 /*
+Negative Weight Cycle: Means cycle sum of weight in graph is negative.
+
 Steps:
     1) Relax all edges (n-1) times by using below condition -  WHY?????
         if(distance[u] + weight < distance[v]) {
@@ -86,6 +88,7 @@ public class BellmanFordAlgorithm {
 
         for (int i = 0; i < n; i++) {
             distance[i] = 10000000; // Warning: It will give overflow value as (max + weight) is out of range of int.
+            // and gives some negative value.
         }
 
         boolean flag = bellmanFord(adj, n, src, distance);
@@ -98,5 +101,44 @@ public class BellmanFordAlgorithm {
         } else {
             System.out.println("Negative Cycle");
         }
+    }
+
+    // (u, v, w) ---> Array each row in this form.
+    public int isNegativeWeightCycle(int n, int[][] edges) {
+        int[] dis = new int[n];
+        for (int i = 0; i < n; i++) {
+            dis[i] = Integer.MAX_VALUE;
+        }
+        dis[0] = 0; // Initializing at source index to 0. MUST CONDITION
+
+        // Relax all edges (n-1) times
+        for(int i=0; i<=n-1; i++){
+            for(int j=0; j<edges.length; j++){
+                int u = edges[j][0];
+                int v = edges[j][1];
+                int w = edges[j][2];
+
+                if(dis[u] == Integer.MAX_VALUE) /////// Correct approach
+                    continue;
+
+                if(dis[u] + w < dis[v]){
+                    dis[v] = dis[u] + w;
+                }
+            }
+        }
+
+        // Negative Cycle
+        for(int j=0; j<edges.length; j++){
+            int u = edges[j][0];
+            int v = edges[j][1];
+            int w = edges[j][2];
+            if(dis[u] == Integer.MAX_VALUE)
+                continue;
+            if(dis[u] + w < dis[v]){
+                return 1;
+            }
+        }
+
+        return 0;
     }
 }
