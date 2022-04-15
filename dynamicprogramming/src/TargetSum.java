@@ -1,5 +1,18 @@
-public class CountSubsetsWithSumEqualToX {
-    public static int countSubsetSum(int N, int arr[], int sum) {
+public class TargetSum {
+    public int findTargetSumWays(int[] nums, int target) {
+        int totalSum = 0;
+        int n = nums.length;
+
+        for (int k : nums) totalSum += k; // Calculating sum of array
+
+        if((totalSum < target) || (totalSum - target) % 2 != 0) return 0;
+
+        int sum = (totalSum - target) / 2; // Count no. of subset whose sum is calculated.
+
+        return countSubsetSum(n, nums, sum);
+    }
+
+    public static int countSubsetSum(int N, int[] arr, int sum) {
         int[][] dp = new int[N+1][sum+1];
 
         // Initialization
@@ -18,13 +31,5 @@ public class CountSubsetsWithSumEqualToX {
             }
         }
         return dp[N][sum];
-    }
-
-    public static void main(String[] args) {
-        int N = 6;
-        int[] arr = {1, 0, 8, 5, 1, 4};
-        int sum = 18;
-
-        System.out.println(countSubsetSum(N, arr, sum));
     }
 }
