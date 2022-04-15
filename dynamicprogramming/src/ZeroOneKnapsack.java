@@ -15,10 +15,10 @@ public class ZeroOneKnapsack {
             Arrays.fill(row, -1);
 
         int n = A.size();
-        return knapSack(A, B, C, n);
+        return knapsack(A, B, C, n);
     }
 
-    public static int knapSack(ArrayList<Integer> A, ArrayList<Integer> B, int C, int n) {
+    public static int knapsack(ArrayList<Integer> A, ArrayList<Integer> B, int C, int n) {
         if(n == 0 || C == 0) {
             return 0;
         }
@@ -28,11 +28,11 @@ public class ZeroOneKnapsack {
         }
 
         if(B.get(n-1) <= C) {
-            return dp[n][C] = Math.max(A.get(n-1) + knapSack(A, B, C - B.get(n-1), n-1), knapSack(A, B, C, n-1));
+            return dp[n][C] = Math.max(A.get(n-1) + knapsack(A, B, C - B.get(n-1), n-1), knapsack(A, B, C, n-1));
         }
 
         // else if(B.get(n-1) > C)
-        return dp[n][C] = knapSack(A, B, C, n-1);
+        return dp[n][C] = knapsack(A, B, C, n-1);
     }
 
     public int solve1(ArrayList<Integer> A, ArrayList<Integer> B, int C) {
@@ -44,7 +44,7 @@ public class ZeroOneKnapsack {
 
         /*
         Memoization - base condition == Tabulation - initialization
-        Not needed in java as it already equal to zero.
+        Not needed in java as it is already equal to zero.
         for(int i = 0; i < N+1; i++) { // For N
             for(int j = 0; j < C+1; j++) { // For W
                 if(i == 0 || j == 0) {
