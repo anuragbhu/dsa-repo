@@ -31,7 +31,7 @@ public class PartitionsWithGivenDifference {
             for(int j = 0; j < sum+1; j++) {
                 if(arr[i-1] <= j) {
                     // Here, max change to ||
-                    dp[i][j] = dp[i-1][j-arr[i-1]] + dp[i-1][j];
+                    dp[i][j] = (dp[i-1][j-arr[i-1]] + dp[i-1][j]) % 1000000007;
                 } else {
                     dp[i][j] = dp[i-1][j];
                 }

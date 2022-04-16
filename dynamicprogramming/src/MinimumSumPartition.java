@@ -35,6 +35,13 @@ public class MinimumSumPartition {
             // subset2 sum ---> sum - i
             // sum - i - i = sum - 2*i
 
+            // OR
+            // subset1 sum --> S1
+            // subset2 sum --> SUM - S1
+            // (S2 - S1) = MIN
+            // (SUM - S1 - S1) = MIN
+            // (SUM - 2S1) = MIN
+
             if(dp[N][i]) {
                 min = Math.min(min, sum - 2*i);
             }
