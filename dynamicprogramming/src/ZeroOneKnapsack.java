@@ -44,6 +44,7 @@ public class ZeroOneKnapsack {
 
         /*
         Memoization - base condition == Tabulation - initialization
+        Block in matrix represent the sub-problem
         Not needed in java as it is already equal to zero.
         for(int i = 0; i < N+1; i++) { // For N
             for(int j = 0; j < C+1; j++) { // For W
