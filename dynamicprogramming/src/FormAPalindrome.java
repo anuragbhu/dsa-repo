@@ -1,18 +1,18 @@
-public class LongestPalindromicSubsequence {
-    public int longestPalinSubseq(String S) {
-        // Matching Algorithm:
-        // Input --- Problem/Question --- Output ---> Total 3 Parts
-        // Match current problem with main problem
-        // If 2/3 parts match found ---> Then current problem is variation of Main Problem
+public class FormAPalindrome {
+    static int countMin(String str) {
+        // Always # of insertions == # of deletion to make palindrome.
+        // i.e. minimum number of character(s) to be deleted to convert it to palindrome
+        // is equal to the
+        // minimum number of character(s) to be inserted to convert it to palindrome.
 
-        // LPS === LCS(A, Reverse(A))
+        String revStr = "";
+        int n = str.length();
 
-        String T = "";
-        for(int i = S.length()-1; i >= 0; i--) {
-            T += S.charAt(i);
+        for(int i = str.length()-1; i >= 0; i--) {
+            revStr += str.charAt(i);
         }
 
-        return longestCommonSubsequence(S, T);
+        return n - longestCommonSubsequence(str, revStr); // str.length - LPS
     }
 
     public static int longestCommonSubsequence(String text1, String text2) {
