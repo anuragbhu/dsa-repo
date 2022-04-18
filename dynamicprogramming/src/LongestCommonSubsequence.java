@@ -37,7 +37,7 @@ public class LongestCommonSubsequence {
 
         int[][] dp = new int[n + 1][m + 1];
 
-        // Intialization Step
+        // Initialization Step
         // Initialize first row and first column equal to zero (Not needed in Java).
 
         for(int i = 1; i < n + 1; i++) {
