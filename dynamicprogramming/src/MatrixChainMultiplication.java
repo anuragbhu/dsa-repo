@@ -14,7 +14,8 @@ public class MatrixChainMultiplication {
         	> Steps:
         		> 1. Find value of i and j
         		> 2. Find right Base Case
-        		> 3. Move k ---> from  i to j
+        		> 3. Move k ---> from  i to j (K loop find)
+        		> 4. Write Function for min/max ... etc.
         */
 
         for(int[] ele : dp) {
