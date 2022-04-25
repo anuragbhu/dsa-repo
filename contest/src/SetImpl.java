@@ -65,5 +65,8 @@ public class SetImpl {
             // Printing all the values inside the object
             System.out.println(value + ", ");
 
+        // Displaying the size of the HashSet
+        System.out.println("The size of the set is: " + hs.size());
+
     }
 }
