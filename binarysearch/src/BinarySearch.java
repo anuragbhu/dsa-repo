@@ -3,7 +3,7 @@ public class BinarySearch {
     public int search(int[] nums, int target) {
         int left = 0, right = nums.length-1, mid = -1;
         while(left <= right) { // equal to sign when left & right at same index and target value is on it.
-            mid = (left + right) / 2;
+            mid = left + (right - left) / 2;
             if(nums[mid] == target) {
                 return mid;
             } else if(nums[mid] < target) {
