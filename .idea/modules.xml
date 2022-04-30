@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/binarysearchtree/binarysearchtree.iml" filepath="$PROJECT_DIR$/binarysearchtree/binarysearchtree.iml" />
       <module fileurl="file://$PROJECT_DIR$/bitmanipulation/bitmanipulation.iml" filepath="$PROJECT_DIR$/bitmanipulation/bitmanipulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/contest/contest.iml" filepath="$PROJECT_DIR$/contest/contest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/divideandconquer/divideandconquer.iml" filepath="$PROJECT_DIR$/divideandconquer/divideandconquer.iml" />
       <module fileurl="file://$PROJECT_DIR$/dynamicprogramming/dynamicprogramming.iml" filepath="$PROJECT_DIR$/dynamicprogramming/dynamicprogramming.iml" />
       <module fileurl="file://$PROJECT_DIR$/graph/graph.iml" filepath="$PROJECT_DIR$/graph/graph.iml" />
       <module fileurl="file://$PROJECT_DIR$/hashmap/hashmap.iml" filepath="$PROJECT_DIR$/hashmap/hashmap.iml" />
