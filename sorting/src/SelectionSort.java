@@ -1,5 +1,5 @@
 public class SelectionSort {
-    int  select(int arr[], int i)
+    int  select(int[] arr, int i)
     {
         int minValue = Integer.MAX_VALUE;
         int minIndex = -1;
@@ -13,7 +13,7 @@ public class SelectionSort {
         return minIndex;
     }
 
-    void selectionSort(int arr[], int n)
+    void selectionSort(int[] arr, int n)
     {
         for(int i = 0; i <  arr.length-1; i++) {
             int minIndex = select(arr, i);

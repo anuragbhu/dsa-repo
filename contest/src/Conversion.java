@@ -57,5 +57,8 @@ public class Conversion {
                 str5.append(ch5);
             }
         }
+
+        // In-case output required is as string the convert SB to String
+        // return str5.toString();
     }
 }
