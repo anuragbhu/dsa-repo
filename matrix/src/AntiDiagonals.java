@@ -1,12 +1,11 @@
 import java.util.ArrayList;
 
 public class AntiDiagonals {
+    // TC = O(n^2), AS = O(1)
     public ArrayList<ArrayList<Integer>> diagonal(ArrayList<ArrayList<Integer>> A) {
 
-        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
         int row = A.size();
-        int col = A.get(0).size();
-
         int len = 2*row - 1;
 
         for(int i = 0; i < len; i++) {

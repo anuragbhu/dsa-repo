@@ -2,42 +2,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SpiralOrderMatrixI {
-    public ArrayList<Integer> spiralOrder(final List<ArrayList<Integer>> A) {
-
-        int top = 0, bottom = A.size()-1, left = 0, right = A.get(0).size()-1;
+    // TC = O(n*m), AS = O(1)
+    public List<Integer> spiralOrder(int[][] matrix) {
+        int row = matrix.length, col = matrix[0].length;
+        int top = 0, bottom = row-1, left = 0, right =col-1;
         int direction = 0;
         // 0 == --->, 1 == top to bottom, 2 = <---, 3 == bottom to top
 
-        ArrayList<Integer> result = new ArrayList<Integer>();
+        List<Integer> result = new ArrayList<>();
 
         while(top <= bottom && left <= right) {
             if(direction == 0) {
                 for(int i = left; i <= right; i++) {
-                    result.add(A.get(top).get(i));
+                    result.add(matrix[top][i]);
                 }
                 top++;
                 direction = 1;
             } else if(direction == 1) {
                 for(int i = top; i <= bottom; i++) {
-                    result.add(A.get(i).get(right));
+                    result.add(matrix[i][right]);
                 }
                 right--;
                 direction = 2;
             } else if(direction == 2) {
                 for(int i = right; i >= left; i--) {
-                    result.add(A.get(bottom).get(i));
+                    result.add(matrix[bottom][i]);
                 }
                 bottom--;
                 direction = 3;
             } else if(direction == 3) {
                 for(int i = bottom; i >= top; i--) {
-                    result.add(A.get(i).get(left));
+                    result.add(matrix[i][left]);
                 }
                 left++;
                 direction = 0;
             }
         }
-
         return result;
     }
 }

@@ -1,6 +1,6 @@
 public class InsertionSort
 {
-    private static void insert(int arr[],int i)
+    private static void insert(int[] arr, int i)
     {
         for(int j = i; j > 0; j--) {
             if(arr[j] < arr[j-1]) {
@@ -13,7 +13,7 @@ public class InsertionSort
         }
     }
     //Function to sort the array using insertion sort algorithm.
-    public void insertionSort(int arr[], int n)
+    public void insertionSort(int[] arr, int n)
     {
         for(int i = 1; i < n; i++) {
             if(arr[i-1] > arr[i]) {
