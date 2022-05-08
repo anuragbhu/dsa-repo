@@ -36,6 +36,7 @@ public class MatrixMultiplication{
 
         int[][] crr = new int[r1][c2];
 
+        // The complexity of multiplication operation (A*B) is O(m*n*p) where m*n and n*p are order of A and B.
         for(int i = 0; i < crr.length; i++) {
             for(int j = 0; j < crr[0].length; j++) {
                 for(int k = 0; k < c1; k++) { // we may use c1 or r2 (the common one)

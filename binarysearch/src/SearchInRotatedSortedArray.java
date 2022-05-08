@@ -3,22 +3,22 @@ public class SearchInRotatedSortedArray {
     public int search(int[] nums, int target) {
         int n = nums.length;
         int minIndex = findKRotation(nums, n);
-        int left = 0, right = minIndex-1;
 
-        while(left <= right) {
-            int mid = left + (right - left) / 2;
-            if(nums[mid] == target) {
-                return mid;
-            } else if(nums[mid] < target) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
+        int firstPart = search(nums, target, 0, minIndex-1);
+        int secondPart = search(nums, target, minIndex, n-1);
 
-        left = minIndex; right = n-1;
+        if(firstPart == -1 && secondPart == -1)
+            return -1;
+        else if(firstPart != -1)
+            return firstPart;
+        else
+            return secondPart;
+    }
+
+    public int search(int[] nums, int target, int left, int right) {
+        int mid = -1;
         while(left <= right) {
-            int mid = left + (right - left) / 2;
+            mid = left + (right - left) / 2;
             if(nums[mid] == target) {
                 return mid;
             } else if(nums[mid] < target) {

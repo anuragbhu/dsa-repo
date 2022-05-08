@@ -10,7 +10,7 @@ public class FirstBadVersion {
     public int firstBadVersion(int n) {
         int first = 1;
 
-        int low = 0, high = n;
+        int low = 1, high = n;
         while(low <= high) {
             int mid = low + (high - low)/2;
             if(isBadVersion(mid)) {

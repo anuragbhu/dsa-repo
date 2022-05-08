@@ -9,7 +9,6 @@ public class SelectionSort {
                 minIndex = j;
             }
         }
-
         return minIndex;
     }
 

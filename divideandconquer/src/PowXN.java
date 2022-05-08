@@ -23,7 +23,7 @@ public class PowXN {
 
     // TC = O(n) SC = O(1)
     public double myPow1(double x, int n) {
-        if(n == 0) return 1;
+        if(n == 0) return 1.0;
         double ans = 1.0;
 
         if(n > 0) {
