@@ -1,19 +1,11 @@
 public class TrailingZeroes {
-    public int solve(int A) {
-        int position = 0;
+    // TC = O(logn), AS = O(11)
+    public int trailingZeroes(int n) {
         int count = 0;
-        while(true) {
-            int mask = 1 << position;
-            int result = A & mask;
-
-            if (result != 0) {
-                break;
-            }
-            count++;
-            position++;
-
+        while(n/5 > 0) {
+            count += n/5;
+            n /= 5;
         }
-
         return count;
     }
 }

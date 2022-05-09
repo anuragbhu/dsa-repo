@@ -1,11 +1,13 @@
 public class Numberof1Bits {
-    public int numSetBits(long a) {
+    // TC = O(1), SC = O(1)
+    // Brian Kernighan's Algorithm
+    public int hammingWeight(int n) {
+        System.out.println(n);
         int count = 0;
-        while(a != 0) {
-            a &= (a-1);
+        while(n != 0) {
+            n = n & (n-1);
             count++;
         }
-
         return count;
     }
 }

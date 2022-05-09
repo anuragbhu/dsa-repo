@@ -1,52 +1,14 @@
 public class ReverseBits {
-    public long reverse(long a) {
-
-        String str = "";
-        while(a > 0) {
-            long temp = (long) a % 2;
-            str += Long.toString(temp);
-            a /= 2;
+    // TC = O(1), SC = O(1)
+    public int reverseBits(int n) {
+        System.out.println(n);
+        int res = 0;
+        for(int i = 0; i < 32; i++){
+            res = res << 1;
+            int lastBit = n & 1;
+            res = res | lastBit;
+            n = n >> 1;
         }
-
-        int len = 32 - str.length();
-
-        for(int i = 0; i < len; i++) {
-            str += "0";
-        }
-
-        int pow = 31;
-        long res = 0;
-        for(int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-            long y = ch - '0';
-            res += y * Math.pow(2, pow);
-            pow--;
-        }
-
         return res;
-    }
-
-    public long reverse2(long a) {
-
-        long ans = 0;
-        for(int i = 31; i >= 0; i--) {
-            ans += (a%2)*Math.pow(2,i);
-            a /= 2;
-        }
-
-        return ans;
-    }
-
-    public long reverse1(long A) {
-        long rev = 0;
-
-        for (int i = 0; i < 32; i++) {
-            rev <<= 1;
-            if ((A & (1 << i)) != 0)
-                rev |= 1;
-        }
-
-        return rev;
-
     }
 }
