@@ -3,6 +3,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class PowerSet {
+    // TC = O(n * 2^n), AS = O(1)
     public List<String> AllPossibleStrings(String s) {
         List<String> a = new ArrayList<String>();
 
@@ -13,15 +14,14 @@ public class PowerSet {
             String result = "";
             for(int j = 0; j < n; j++) {
                 if((i & (1 << j)) != 0)
-                    result += String.valueOf(s.charAt(j));
+                    result += s.substring(j, j+1);
             }
-            if(result.length() > 0)     // (result != null && !result.trim().isEmpty())
+            if(result.length() > 0)
                 a.add(result);
 
         }
 
         Collections.sort(a);
-
 
         return a;
     }
