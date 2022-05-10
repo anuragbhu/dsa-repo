@@ -6,5 +6,7 @@ public class ArrayListImpl {
         int[][] dp = new int[1001][1001];
         for (int[] row: dp)
             Arrays.fill(row, -1);
+
+        // Arrays equals function
     }
 }
