@@ -1,23 +1,24 @@
 public class MaxConsecutiveOnes {
+    // TC = O(n), AS = O(1)
     public int findMaxConsecutiveOnes(int[] nums) {
+        int maxHere = 0, max = 0;
+        for (int n : nums)
+            max = Math.max(max, maxHere = n == 0 ? 0 : maxHere + 1);
+        return max;
+    }
 
-        int maxOnes = 0, n = nums.length;
-        int i = 0, j = 0, count = 0;
-        while(i < n && j < n) {
-            if(nums[j] == 1) {
+    // TC = O(n^2), AS = O(1)
+    public int findMaxConsecutiveOnes1(int[] nums) {
+        int maxCount = 0;
+        for(int i = 0; i < nums.length; i++) {
+            int count = 0;
+            for(int j = i; j < nums.length; j++) {
+                if(nums[j] == 0)
+                    break;
                 count++;
-                j++;
-            } else {
-                count = j - i;
-                maxOnes = Math.max(count, maxOnes);
-                count = 0;
-                j++;
-                i = j;
             }
+            maxCount = Math.max(count, maxCount);
         }
-
-        maxOnes = Math.max(count, maxOnes);
-
-        return maxOnes;
+        return maxCount;
     }
 }

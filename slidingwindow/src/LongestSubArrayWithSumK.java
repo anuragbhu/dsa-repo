@@ -1,14 +1,13 @@
 public class LongestSubArrayWithSumK {
     // TC = O(N^2), AS = O(1)
     public static int lenOfLongSubarr (int[] A, int N, int K) {
-        int maxLen = 0, length = 0;
+        int maxLen = 0;
         for(int i = 0; i < N; i++) {
             int sum = 0, j = i;
             while(j < N) {
                 sum += A[j];
                 if(sum == K) {
-                    length = j - i + 1;
-                    maxLen = Math.max(length, maxLen);
+                    maxLen = Math.max((j - i + 1), maxLen);
                 }
                 j++;
             }
