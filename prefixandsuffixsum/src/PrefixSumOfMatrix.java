@@ -1,27 +1,39 @@
 public class PrefixSumOfMatrix {
 
     public static void prefixSumOfMatrix(int[][] arr) {
-        int[][] brr = new int[arr.length][arr[0].length];
+        int m = arr.length;
+        int n = arr[0].length;
+        // Storing Prefix Sum of Matrix
+        int[][] prefixSum = new int[m][n];
 
-        for(int i = 0; i < arr.length; i++) {
-            if(i > 0) {
-                brr[i][0] = brr[i-1][0] + arr[i][0];
-            } else {
-                brr[i][0] = arr[i][0];
-            }
+        // case 1: for first element of the matrix
+        prefixSum[0][0] = arr[0][0];
 
-            for(int j = 1; j < arr[0].length; j++) {
-                if(i > 0) {
-                    brr[i][j] = brr[i-1][j] + brr[i][j-1] - brr[i-1][j-1] + arr[i][j];
-                } else {
-                    brr[i][j] = brr[i][j-1] + arr[i][j];
-                }
+        int sum = arr[0][0];
+        // case 2: For first row of the matrix (except first element)
+        for(int j = 1; j < n; j++) {
+            sum += arr[0][j];
+            prefixSum[0][j] = sum;
+        }
+
+        sum = arr[0][0];
+        // case 3: For first column of the matrix (except first element)
+        for(int i = 1; i < m; i++) {
+            sum += arr[i][0];
+            prefixSum[i][0] = sum;
+        }
+
+        // case 4: For rest of the elements of (m-1)*(n-1)
+        for(int i = 1; i < m; i++) {
+            for(int j = 1; j < n; j++) {
+                prefixSum[i][j] = prefixSum[i-1][j] + prefixSum[i][j-1] - prefixSum[i-1][j-1] + arr[i][j];
             }
         }
 
-        for(int i = 0; i < brr.length; i++) {
-            for (int j = 0; j < brr[0].length; j++) {
-                System.out.print(brr[i][j] + " ");
+        // Print Matrix
+        for(int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(prefixSum[i][j] + " ");
             }
             System.out.println();
         }

@@ -1,60 +1,32 @@
 import java.util.HashSet;
 
 public class SubarrayWith0Sum {
-    static boolean findsum(int arr[],int n)
-    {
-        // First element 0.
-        if(arr[0] == 0) {
-            return true;
-        }
-
+    // TC = O(n^2), As = O(1)
+    static boolean findsum(int[] arr, int n) {
         for(int i = 0; i < n; i++) {
-            int sum = arr[i];
-
-            // In between 0 found.
-            if(sum == 0) {
-                return true;
-            }
-            for(int j = i+1; j < n; j++) {
+            int sum = 0;
+            for(int j = i; j < n; j++) {
                 sum += arr[j];
-
-                if(sum == 0) {
+                if(sum == 0)
                     return true;
-                }
             }
         }
-        // Not found.
         return false;
     }
 
-    static boolean findsum1(int arr[],int n)
-    {
-        // First element 0.
-        if(arr[0] == 0) {
-            return true;
-        }
-
-        HashSet<Integer> set = new HashSet<Integer>();
-
-        int sum = 0;
-
+    // TC = O(n), As = O(n)
+    static boolean findsum1(int[] arr, int n) {
+        HashSet<Integer> hset = new HashSet<>();
+        int prefixSum = 0;
+        hset.add(0); // 10 -10
         for(int i = 0; i < n; i++) {
-            sum += arr[i];
+            prefixSum += arr[i];
 
-            if(sum == 0) {
+            if(hset.contains(prefixSum))
                 return true;
-            }
-
-            boolean isExist = set.contains(sum);
-
-            if(isExist) {
-                return true;
-            } else {
-                set.add(sum);
-            }
+            else
+                hset.add(prefixSum);
         }
-
-        // Not found.
         return false;
     }
 }
