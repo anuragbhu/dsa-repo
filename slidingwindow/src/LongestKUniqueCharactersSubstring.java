@@ -33,8 +33,8 @@ public class LongestKUniqueCharactersSubstring {
                     map.put(del, map.get(del) - 1);
                 start++;
             }
-
-            size = Math.max(size, end - start + 1);
+            if(map.size() == k)
+                size = Math.max(size, end - start + 1);
             end++;
         }
         return size;
