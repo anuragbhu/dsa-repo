@@ -4,7 +4,7 @@ import java.util.List;
 
 public class FindAllAnagramsInAString {
 
-    // TC = O(n), AS = (2 * 26) = O(1)
+    // TC = O(n), AS = O(2 * 26) = O(1)
     public List<Integer> findAnagrams(String s, String p) {
         List<Integer> res = new ArrayList<>();
 
