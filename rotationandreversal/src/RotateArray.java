@@ -1,6 +1,5 @@
 public class RotateArray {
     public void rotate(int[] nums, int k) {
-
         int n = nums.length;
         k = k % n;
         if(k < 0) // In case k < 0
@@ -17,7 +16,6 @@ public class RotateArray {
     }
 
     public void rotate1(int[] nums, int k) {
-
         int n = nums.length;
         int rotate = k % n;
 
@@ -44,18 +42,15 @@ public class RotateArray {
     }
 
     public void rotate2(int[] nums, int k) {
-
         int n = nums.length;
         k = k % n; // Important in case k > n
 
         if(k < 0) // In case k < 0
             k = k + n;
 
-
         reverseArray(nums, 0, n - 1);
         reverseArray(nums, 0, k - 1);
         reverseArray(nums, k, n - 1);
-
     }
 
     private static void reverseArray(int nums[], int start, int end){

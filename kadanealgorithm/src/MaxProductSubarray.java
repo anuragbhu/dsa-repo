@@ -1,41 +1,40 @@
 import java.util.List;
 
 public class MaxProductSubarray {
-    public int maxProduct(final List<Integer> A) {
+    // TC = O(n), AS = O(1)
+    public int maxProduct1(int[] nums) {
+        int n = nums.length;
+        int prod = 1;
+        int maxProd = Integer.MIN_VALUE;
 
-        int maxProd = A.get(0);
-        int prod = A.get(0);
-        int prodPositive = A.get(0);
-
-        for(int i = 1; i < A.size(); i++) {
-            prod *= A.get(i); // Multiply all values
-            prodPositive *= A.get(i); // Multiply only positive values
-
-            if(A.get(i-1) == 0) { // If 0 found for all values Multiplication
-                prod = A.get(i);
-            } else if(A.get(i-1) < 0) { // If negative found for positive values Multiplication
-                prodPositive = A.get(i);
-            }
-            maxProd = Math.max(maxProd, prod);
-            maxProd = Math.max(maxProd, prodPositive);
+        for(int i = 0; i < n; i++) { // Left to Right
+            prod *= nums[i];
+            maxProd = Math.max(prod, maxProd);
+            if(nums[i] == 0)
+                prod = 1;
         }
 
+        prod = 1;
+        for(int i = n-1; i >= 0; i--) { // Right  to Left
+            prod *= nums[i];
+            maxProd = Math.max(prod, maxProd);
+            if(nums[i] == 0)
+                prod = 1;
+        }
         return maxProd;
     }
 
-    public int maxProduct1(final List<Integer> A) {
-
+    // TC = O(n^2), AS = O(1)
+    public int maxProduct(int[] nums) {
+        int n = nums.length;
         int maxProd = Integer.MIN_VALUE;
-
-        for(int i = 0; i < A.size(); i++) {
-            int prod = A.get(i);
-            maxProd = Math.max(maxProd, prod);
-            for(int j = i+1; j < A.size(); j++) {
-                prod *= A.get(j);
-                maxProd = Math.max(maxProd, prod);
+        for(int i = 0; i < n; i++) {
+            int prod = 1;
+            for(int j = i; j < n; j++) {
+                prod *= nums[j];
+                maxProd = Math.max(prod, maxProd);
             }
         }
-
         return maxProd;
     }
 }

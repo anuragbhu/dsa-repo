@@ -2,10 +2,10 @@ import java.util.ArrayList;
 
 public class MaximumSubarraySumAfterKConcatenation {
     public static long maxSubSumKConcat(ArrayList<Integer> arr, int n, int k) {
-        int[] temp = new int[n*k];
+        int[] resultant = new int[n*k];
         int j = 0;
-        for(int i = 0; i < temp.length; i++) {
-            temp[i] = arr.get(j);
+        for(int i = 0; i < resultant.length; i++) {
+            resultant[i] = arr.get(j);
             j++;
 
             if(j == n) j = 0;
@@ -14,17 +14,15 @@ public class MaximumSubarraySumAfterKConcatenation {
         long maxSum = Long.MIN_VALUE;
         long sum = 0;
 
-        for(int i = 0; i < temp.length; i++) {
-            sum += temp[i];
-            sum = Math.max(temp[i], sum);
+        for(int i = 0; i < resultant.length; i++) {
+            sum += resultant[i];
+            sum = Math.max(resultant[i], sum);
             maxSum = Math.max(maxSum, sum);
         }
-
         return maxSum;
     }
 
     public static long maxSubSumKConcat1(ArrayList<Integer> arr, int n, int k) {
-
         long maxSum = Long.MIN_VALUE;
         long sum = 0;
 
@@ -41,6 +39,4 @@ public class MaximumSubarraySumAfterKConcatenation {
         }
         return maxSum;
     }
-
-
 }
