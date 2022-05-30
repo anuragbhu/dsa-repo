@@ -1,21 +1,14 @@
 public class GreatestCommonDivisor {
     public int gcd(int A, int B) {
+        int min = Math.min(A, B);
 
-        if(A == 0)
-            return B;
-
-        if(B == 0)
-            return A;
-
-        int gcd = 1;
-
-        for(int i = 1; i <= A && i <= B; i++) {
+        for(int i = min; i > 0 ; i--) {
             if((A % i == 0) && (B % i == 0)) {
-                gcd = Math.max(i, gcd);
+                return i;
             }
         }
 
-        return gcd;
+        return (A == 0) ? B : A;
     }
 
     public int gcd1(int A, int B) {

@@ -1,4 +1,5 @@
 public class RotateArray {
+    // TC = O(n*k), AS = O(1)
     public void rotate(int[] nums, int k) {
         int n = nums.length;
         k = k % n;
@@ -15,6 +16,7 @@ public class RotateArray {
 
     }
 
+    // TC = O(n), AS = O(n)
     public void rotate1(int[] nums, int k) {
         int n = nums.length;
         int rotate = k % n;
@@ -41,19 +43,17 @@ public class RotateArray {
 
     }
 
+    // TC = O(n), AS = O(1)
     public void rotate2(int[] nums, int k) {
         int n = nums.length;
         k = k % n; // Important in case k > n
-
-        if(k < 0) // In case k < 0
-            k = k + n;
 
         reverseArray(nums, 0, n - 1);
         reverseArray(nums, 0, k - 1);
         reverseArray(nums, k, n - 1);
     }
 
-    private static void reverseArray(int nums[], int start, int end){
+    private static void reverseArray(int[] nums, int start, int end){
         while (start < end)
         {
             int temp = nums[start];
