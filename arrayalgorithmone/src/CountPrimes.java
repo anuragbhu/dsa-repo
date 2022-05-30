@@ -1,10 +1,7 @@
-import java.util.ArrayList;
-
-public class PrimeSum {
+public class CountPrimes {
     // TC = O(nloglogn), AS = O(n)
-    public ArrayList<Integer> primesum(int A) {
-        ArrayList<Integer> res = new ArrayList<>();
-        int n = A;
+    public int countPrimes(int n) {
+        int count = 0;
         boolean[] primes = new boolean[n+1]; // Why? N is inclusive
 
         for(int i = 2; i < n+1; i++) { // Ignoring 0 and 1? As 2 is the smallest prime.
@@ -19,16 +16,10 @@ public class PrimeSum {
             }
         }
 
-        for(int i = 2; i < n+1; i++) {
-            boolean p = primes[i];
-            boolean q = primes[A-i];
-
-            if(p && q) {
-                res.add(i);
-                res.add(A-i);
-                return res;
-            }
+        for(int i = 2; i < n; i++) { // Strictly less than n
+            if(primes[i])
+                count++;
         }
-        return res;
+        return count;
     }
 }
