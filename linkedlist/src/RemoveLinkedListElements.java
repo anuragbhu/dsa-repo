@@ -1,23 +1,18 @@
 public class RemoveLinkedListElements {
-     // Definition for singly-linked list.
+    // Definition for singly-linked list.
+    // TC = O(n), AS = O(1)
     public ListNode removeElements(ListNode head, int val) {
+// Remove - First, Index, Last
+        if(head == null) return null;
 
-        if(head == null)
-            return head;
-
-        ListNode prev = head;
-        ListNode cur = head;
-
-        while(head != null) {
-            if(head.val == val) {
-                prev.next = head.next;
-            } else {
-                prev = head;
-            }
-            head = head.next;
+        ListNode curr = head, prev = head;
+        while(curr != null) {
+            if(curr.val == val)
+                prev.next = curr.next;
+            else
+                prev = curr;
+            curr = curr.next;
         }
-
-        return cur.val == val ? cur.next : cur;
-
+        return (head.val == val)? head.next : head;
     }
 }

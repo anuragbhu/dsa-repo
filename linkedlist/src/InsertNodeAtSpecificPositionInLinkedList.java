@@ -1,24 +1,25 @@
 public class InsertNodeAtSpecificPositionInLinkedList {
+    // TC = O(n), As = O(1)
     public static Node insertNodeAtPosition(Node llist, int data, int position) {
-        Node head = llist;
+        Node curr = llist;
         Node node = new Node(data);
 
-        if(position == 0) {
-            node.next = head;
-            return node;
+        if(curr == null && position == 0) {
+            curr = node;
+            return llist;
         }
-        int count = 0;
-        while(head != null) {
-            count++;
-            if(count == position) {
-                node.next = head.next;
-                head.next = node;
-                return llist;
+
+        int index = 0;
+        while(curr != null) {
+            if(index == position-1) {
+                break;
             }
-            head = head.next;
+            index++;
+            curr = curr.next;
         }
+        node.next = curr.next;
+        curr.next = node;
 
         return llist;
-
     }
 }

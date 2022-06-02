@@ -1,10 +1,9 @@
 public class RemoveDuplicatesFromSortedList {
+    // TC = O(n), AS = O(1)
     public ListNode deleteDuplicates(ListNode head) {
+        if(head == null) return head;
 
-        if(head == null)
-            return head;
-
-        ListNode cur = head;
+        ListNode curr = head;
 
         while(head.next != null) {
             if(head.val == head.next.val) {
@@ -13,8 +12,6 @@ public class RemoveDuplicatesFromSortedList {
                 head = head.next;
             }
         }
-
-        return cur;
-
+        return curr;
     }
 }

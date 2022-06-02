@@ -1,17 +1,22 @@
 public class RemoveNthNodeFromEndofList {
-    public ListNode removeNthFromEnd(ListNode head, int n) {
+    private int getSize(ListNode curr) {
+        int size = 0;
+        while(curr != null) {
+            size++;
+            curr = curr.next;
+        }
+        return size;
+    }
 
+    // TC = O(n), AS = O(1)
+    public ListNode removeNthFromEnd(ListNode head, int n) {
         // case 1: If head is null.
         if(head == null) {
             return head;
         }
 
         ListNode curr = head;
-        int count = 0;
-        while(curr != null) {
-            count++;
-            curr = curr.next;
-        }
+        int count = getSize(curr);
 
         // case 2: If LL contains only 1 node.
         if(n == 1 && count == 1) {
@@ -25,7 +30,6 @@ public class RemoveNthNodeFromEndofList {
 
         int index = count - n;
         count = 1;
-        curr = head;
 
         // case 4: If LL contains 2 or more elements.
         while(curr != null) {
@@ -36,7 +40,6 @@ public class RemoveNthNodeFromEndofList {
             count++;
             curr = curr.next;
         }
-
         return head;
     }
 }
