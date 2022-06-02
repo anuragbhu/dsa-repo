@@ -10,34 +10,38 @@ public class RemoveNthNodeFromEndofList {
 
     // TC = O(n), AS = O(1)
     public ListNode removeNthFromEnd(ListNode head, int n) {
+        // n is 1-based indexing (assume)
         // case 1: If head is null.
         if(head == null) {
             return head;
         }
 
         ListNode curr = head;
-        int count = getSize(curr);
+        int size = getSize(curr);
 
-        // case 2: If LL contains only 1 node.
-        if(n == 1 && count == 1) {
+        // case 2: If n > size.
+        // Only for Info purpose --- 1 <= n <= size
+
+        // case 3: If LL contains only 1 node.
+        if(n == 1 && size == 1) {
             return null;
         }
 
-        // case 3: If LL size is equal to n
-        if(n == count) {
+        // case 4: If LL size is equal to n
+        if(n == size) {
             return head.next;
         }
 
-        int index = count - n;
-        count = 1;
+        int index = size - n;
+        size = 1;
 
-        // case 4: If LL contains 2 or more elements.
+        // case 5: If LL contains 2 or more elements.
         while(curr != null) {
-            if(index == count) {
+            if(index == size) {
                 curr.next = curr.next.next;
                 break;
             }
-            count++;
+            size++;
             curr = curr.next;
         }
         return head;
