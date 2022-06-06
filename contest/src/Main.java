@@ -9,7 +9,7 @@ public class Main {
 
         System.out.println("Hello!");
         System.out.println(Math.random());
-
+        System.out.println("there");
         sc.close();
     }
 }
