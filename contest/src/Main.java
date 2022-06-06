@@ -7,6 +7,7 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("Hello!");
         System.out.println(Math.random());
 
         sc.close();
