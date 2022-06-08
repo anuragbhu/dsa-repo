@@ -1,21 +1,19 @@
 public class ReverseLinkedList {
+    // Pointer Iterative Approach
+    // TC = O(n), AS = O(1)
     public ListNode reverseList(ListNode head) {
-        if(head == null)
-            return null;
-
         ListNode newHead = null;
-        ListNode curr = head;
-
-        while(curr != null) {
-            ListNode temp = curr;
-            curr = curr.next;
-            temp.next = newHead;
-            newHead = temp;
+        while(head != null) {
+            ListNode next = head.next;
+            head.next = newHead;
+            newHead = head;
+            head = next;
         }
-
         return newHead;
     }
 
+    // Data Iterative Approach
+    // TC = O(n^2), AS = O(1)
     public ListNode reverseList1(ListNode head) {
         if(head == null)
             return null;
@@ -23,11 +21,9 @@ public class ReverseLinkedList {
         int leftIndex = 0;
         int rightIndex = getSize(head) - 1;
 
-        ListNode curr = head;
-
         while(leftIndex <  rightIndex) {
-            ListNode left = getNode(curr, leftIndex);
-            ListNode right = getNode(curr, rightIndex);
+            ListNode left = getNode(head, leftIndex);
+            ListNode right = getNode(head, rightIndex);
 
             int temp = left.val;
             left.val = right.val;
