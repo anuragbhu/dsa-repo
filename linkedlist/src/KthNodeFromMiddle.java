@@ -1,56 +1,28 @@
 public class KthNodeFromMiddle {
+    // TC = O(n), AS = O(1)
     public int solve(ListNode A, int B) {
-        ListNode curr = A;
-        int count = 0; // For length of the LL
+        int mid = getSize(A) / 2;
+        int index = mid - B;
+        if(index < 0)
+            return -1;
 
-        // Finding length of LL
-        while(curr != null) {
-            count++;
-            curr = curr.next;
-        }
-
-        if(count < B) return -1;
-
-        //  Bth node from the middle towards the beginning of the Linked List A
-        int mid = (count / 2) + 1 - B;
-        count = 0;
-        curr = A;
-
-        while(curr != null) {
-            count++;
-            if(count == mid)
-                return (int) curr.val;
-            curr = curr.next;
+        int idx = 0;
+        while(A != null) {
+            if(index == idx) {
+                return A.val;
+            }
+            idx++;
+            A = A.next;
         }
         return -1;
     }
 
-    public int solve1(ListNode A, int B) {
-        ListNode curr = A;
-        ListNode fast = A;
-        ListNode slow = A;
-        int count = 0; // For length of the LL
-
-        // Finding length & mid of the LL
-        while(fast != null && fast.next != null) {
-            count++;
-            slow = slow.next;
-            fast = fast.next.next;
+    private int getSize(ListNode head) {
+        int size = 0;
+        while(head != null) {
+            size++;
+            head = head.next;
         }
-        count = (count * 2) + 1;
-        if(count < B) return -1;
-
-        //  Bth node from the middle towards the beginning of the Linked List A
-        int mid = (count / 2) + 1 - B;
-        count = 0;
-        curr = A;
-
-        while(curr != null) {
-            count++;
-            if(count == mid)
-                return (int) curr.val;
-            curr = curr.next;
-        }
-        return -1;
+        return size;
     }
 }

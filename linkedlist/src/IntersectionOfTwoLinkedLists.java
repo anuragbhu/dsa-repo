@@ -1,40 +1,33 @@
-import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class IntersectionOfTwoLinkedLists {
+    // TC = O(m*n), AS = O(1)
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-
-        ListNode headACurr = headA;
-        ListNode headBCurr = headB;
-
-        while(headACurr != null) {
-            ListNode temp = headBCurr;
-            while(temp != null) {
-                if(headACurr == temp)
-                    return headACurr;
-                temp = temp.next;
+        while(headA != null) {
+            ListNode tempB = headB;
+            while(tempB != null) {
+                if(headA == tempB)
+                    return tempB;
+                tempB = tempB.next;
             }
-            headACurr = headACurr.next;
+            headA = headA.next;
         }
         return null;
     }
 
+    // TC = O(m+n), AS = O(m)
     public ListNode getIntersectionNode1(ListNode headA, ListNode headB) {
-
-        ListNode headACurr = headA;
-        ListNode headBCurr = headB;
-
-        HashMap<ListNode, Integer> map = new HashMap<>();
-
-        while(headACurr != null) {
-            map.put(headACurr, headACurr.val);
-            headACurr = headACurr.next;
+        Set<ListNode> set = new HashSet<>();
+        while(headA != null) {
+            set.add(headA);
+            headA = headA.next;
         }
 
-        while(headBCurr != null) {
-            if (map.containsKey(headBCurr)) {
-                return headBCurr;
-            }
-            headBCurr = headBCurr.next;
+        while(headB != null) {
+            if(set.contains(headB))
+                return headB;
+            headB = headB.next;
         }
         return null;
     }
