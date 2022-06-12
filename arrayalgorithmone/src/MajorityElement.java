@@ -1,59 +1,49 @@
 import java.util.HashMap;
 
 public class MajorityElement {
+    // TC = O(n*n), AS = O(1)
     public int majorityElement(int[] nums) {
+        int n = nums.length;
+        int majority = n/2;
 
-        int len = nums.length/2;
-
-        for(int i = 0; i < nums.length; i++) {
+        for(int i = 0; i < n; i++) {
             int count = 0;
-            for(int j = 0; j < nums.length; j++) {
-                if(nums[i] == nums[j])
+            for(int j = 0; j < n; j++) {
+                if(nums[j] == nums[i])
                     count++;
             }
-
-            if(count > len)
+            if(count > majority)
                 return nums[i];
         }
         return -1;
-
     }
 
+    // TC = O(n), AS = O(n)
     public int majorityElement1(int[] nums) {
+        int n = nums.length;
+        int majority = n/2;
 
-        int len = nums.length/2;
-
-        HashMap<Integer, Integer> hmap = new HashMap<Integer, Integer>();
-
-        for(int i = 0; i < nums.length; i++) {
-
-            int value = hmap.containsKey(nums[i]) ? hmap.get(nums[i]) : 0;
-            if (value > 0) {
-                hmap.put(nums[i], value + 1);
-                if((value+1) > len)
-                    return nums[i];
-            } else {
-                hmap.put(nums[i], 1);
-                if(1 > len)
-                    return nums[i]; // For single element only.
-            }
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int i = 0; i < n; i++) {
+            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
         }
 
-        // for (Integer value : hmap.keySet())
-        // {
-        //     int count = hmap.get(value);
-        //     if(count > len)
-        //         return value;
-        // }
-
+        for(int key : map.keySet()) {
+            if(map.get(key) > majority)
+                return key;
+        }
         return -1;
     }
 
+    // TC = O(n), AS = O(1)
+    // If the element is present more than N / 2 times in the array, its count will never become zero.
+    // If always not exist then verify before returning.
     public int majorityElement2(int[] nums) {
+        int n = nums.length;
+        int count = 0;
+        int element = 0;
 
-        int element = 0, count = 0;
-
-        for(int i = 0; i < nums.length; i++) {
+        for(int i = 0; i < n; i++) {
             if(count == 0)
                 element = nums[i];
 
@@ -62,6 +52,6 @@ public class MajorityElement {
             else
                 count--;
         }
-        return element; // Iterate to count the frequency of this element whether majority exist ir not.
+        return element;
     }
 }
