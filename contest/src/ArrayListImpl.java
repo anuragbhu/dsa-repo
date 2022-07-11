@@ -1,4 +1,7 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 public class ArrayListImpl {
     public static void main(String[] args) {
@@ -8,5 +11,12 @@ public class ArrayListImpl {
             Arrays.fill(row, -1);
 
         // Arrays equals function
+
+        List<Integer> list = new ArrayList<>();
+        Iterator it = list.iterator();
+        while(it.hasNext()) {
+            System.out.println(it.next());
+            // We can use it.next() only once inside the loop.
+        }
     }
 }

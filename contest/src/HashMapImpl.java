@@ -139,7 +139,7 @@ public class HashMapImpl {
         // The map is sorted according to the natural ordering of its keys
         // TreeMap in Java does not allow null keys (like Map) and thus a NullPointerException is thrown.
         // However, multiple null values can be associated with different keys.
-        TreeMap<Integer, String> tree_map = new TreeMap<Integer, String>();
+        TreeMap<Integer, String> tree_map = new TreeMap<>();
 
 
         // Map implementation with duplicate values (if keys then make it as values, due to map property)
