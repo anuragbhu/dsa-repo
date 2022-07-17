@@ -6,6 +6,11 @@ public class Conversion {
         int i = Integer.parseInt(str); // Output: 200 ---> // methods throw NumberFormatException.
         Integer in = Integer.valueOf(str); // Output: 200 ---> // methods throw NumberFormatException.
 
+        // String to double
+        String strd = "200.100";
+        double d = Double.parseDouble(strd); // Output: 200 ---> // methods throw NumberFormatException.
+        Double dd = Double.valueOf(strd); // Output: 200 ---> // methods throw NumberFormatException.
+
         // int to String
         String s = String.valueOf(i); // Output: "200"
         String ss = Integer.toString(i); // Output: "200"

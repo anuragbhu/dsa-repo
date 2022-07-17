@@ -7,16 +7,21 @@ import java.lang.*;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
-//        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
 //        System.out.println("Hello!");
 //        System.out.println(Math.random());
 //        System.out.println("there");
 
-        File file = new File("C:\\Users\\anurag.pandey\\Documents\\file.txt");
-        Scanner sc = new Scanner(file);
-        while(sc.hasNextLine()){
-            System.out.println(sc.nextLine());
+        String ans = sc.nextLine();
+
+        switch (ans) {
+            case "A":
+                System.out.println("Value is A");
+                System.out.println("Value is A");
+                break;
+            case "B":
+                System.out.println("Value is B");
         }
 
         sc.close();
