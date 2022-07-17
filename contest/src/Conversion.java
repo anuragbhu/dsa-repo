@@ -8,8 +8,8 @@ public class Conversion {
 
         // String to double
         String strd = "200.100";
-        double d = Double.parseDouble(strd); // Output: 200 ---> // methods throw NumberFormatException.
-        Double dd = Double.valueOf(strd); // Output: 200 ---> // methods throw NumberFormatException.
+        double d = Double.parseDouble(strd); // Output: 200.100 ---> // methods throw NumberFormatException.
+        Double dd = Double.valueOf(strd); // Output: 200.100 ---> // methods throw NumberFormatException.
 
         // int to String
         String s = String.valueOf(i); // Output: "200"
