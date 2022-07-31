@@ -69,7 +69,7 @@ public class StringImpl {
         // would treat multiple spaces the same as a single space.
         // It returns an array of strings (String[]) without any " " results.
         // \\s+ will split your string on one or more spaces
-        String[] str = title.split("\\s+");
+        String[] str = title.split("\\s+"); // Don't use
 
         // result =
         // Geeks

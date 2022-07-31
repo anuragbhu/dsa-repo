@@ -8,25 +8,10 @@ import java.lang.Thread;
 import java.lang.Double;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
-
-        Scanner sc = new Scanner(System.in);
-
-//        System.out.println("Hello!");
-//        System.out.println(Math.random());
-//        System.out.println("there");
-
-        String ans = sc.nextLine();
-
-        switch (ans) {
-            case "A":
-                System.out.println("Value is A");
-                System.out.println("Value is A");
-                break;
-            case "B":
-                System.out.println("Value is B");
-        }
-
-        sc.close();
+    static int a = 132;
+    public static void main(String[] args) {
+        int a = 121;
+        String val = "Hello";
+        System.out.println(val + a);
     }
 }
