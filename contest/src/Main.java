@@ -13,5 +13,14 @@ public class Main {
         int a = 121;
         String val = "Hello";
         System.out.println(val + a);
+        Integer val1 = 12;
+        System.out.println(" \"  ");
+
+        switch(a) {
+            case 121:
+                System.out.println("Hello");
+            case 122:
+                System.out.println("Hi");
+        }
     }
 }
