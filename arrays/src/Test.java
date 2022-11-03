@@ -1,9 +1,12 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.lang.*;
+import java.math.*;
 
 public class Test {
 
     public static void main(String[] args) {
+        int aa = Math.abs(-2);
+        int bb = (int) Math.floor(-2.56);
         HashMap<String, Integer> map = new HashMap<>();
 
         // HashMap(int initialCapacity) Constructor
